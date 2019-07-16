@@ -9,7 +9,6 @@ int
 main () {
     int* input;
     int num;
-    int save[11];
     int i;
 
 
@@ -17,20 +16,12 @@ main () {
 
     input = (int*)malloc(sizeof(int)*num);
 
-    for( i=0;i<num;i++){
-       
+    for( i=0;i<num;i++)
         scanf("%d",input+i);
-        if(*(input+i)<11 && *(input+i) >0){
-        save[*(input+i)] = *(input+i);
-        printf("save[%d]: %d",*(input+i), *(input+i));
-        }
-    }
-    
-
 
     for(i=0; i<num;i++){
         count=0;
-        cal(save[*(input+i)]);
+        cal(*(input+i));
         printf("%d\n",count);
     }
 }
